@@ -8,7 +8,7 @@ export default function ButtonComponent() {
     return (
         <div className="mb-2">
             <Button variant="success" size="lg" onClick={handleClick}>
-                Lancer le questionnaire
+                Let's Go !
             </Button>
         </div>
     )

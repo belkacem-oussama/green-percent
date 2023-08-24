@@ -18,6 +18,7 @@ const Interview: React.FC = () => {
 
     //themes
     const theme: Theme = survey.themes[currentTheme]
+
     const themeName: string = theme.name
     const desiredTheme = survey.themes.find((theme) => theme.name === themeName)
 
@@ -30,7 +31,16 @@ const Interview: React.FC = () => {
 
     //functions
     const handleInterview = () => {
-        setCurrentQuestion(currentQuestion + 1)
+        if (currentQuestion < questionsByTheme.length - 1) {
+            setCurrentQuestion(currentQuestion + 1)
+        } else {
+            if (currentTheme < 5) {
+                setCurrentTheme(currentTheme + 1)
+                setCurrentQuestion(0)
+            } else {
+                console.log('Interview finished')
+            }
+        }
     }
 
     return (

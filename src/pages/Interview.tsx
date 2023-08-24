@@ -15,6 +15,7 @@ interface Question {
 const Interview: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<number>(0)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
+    const [interviewFinished, setInterviewFinished] = useState(false)
 
     //themes
     const theme: Theme = survey.themes[currentTheme]
@@ -39,11 +40,14 @@ const Interview: React.FC = () => {
                 setCurrentQuestion(0)
             } else {
                 console.log('Interview finished')
+                setInterviewFinished(!interviewFinished)
             }
         }
     }
 
-    return (
+    return interviewFinished ? (
+        "Merci d'avoir répondu"
+    ) : (
         <div className="interview">
             <p>{currentQuestionText}</p>
             {options.map((option, index) => (

@@ -29,7 +29,9 @@ const Interview: React.FC = () => {
     const options: string[] = survey.themes[6].options
 
     //functions
-    const handleInterview = () => {}
+    const handleInterview = () => {
+        setCurrentQuestion(currentQuestion + 1)
+    }
 
     return (
         <div className="interview">

@@ -1,5 +1,5 @@
 import Button from 'react-bootstrap/Button'
-import '../assets/styles/components/buttons.scss'
+import '../assets/styles/components/button.scss'
 
 export default function ButtonComponent() {
     const handleClick = () => {

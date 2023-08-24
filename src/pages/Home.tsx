@@ -1,6 +1,6 @@
 import GPLogo from '../assets/images/green-percent-logo.png'
 import GPGirl from '../assets/images/green-logo-girl.png'
-import ButtonComponent from '../assets/styles/components/Button.tsx'
+import ButtonComponent from '../components/components.tsx'
 import '../assets/styles/pages/home.scss'
 
 export default function Home() {

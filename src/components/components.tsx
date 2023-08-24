@@ -1,4 +1,5 @@
 import Button from 'react-bootstrap/Button'
+import '../assets/styles/components/buttons.scss'
 
 export default function ButtonComponent() {
     const handleClick = () => {
@@ -7,7 +8,7 @@ export default function ButtonComponent() {
 
     return (
         <div className="mb-2">
-            <Button variant="success" size="lg" onClick={handleClick}>
+            <Button className="button-home" size="lg" onClick={handleClick}>
                 Let's Go !
             </Button>
         </div>

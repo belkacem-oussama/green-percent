@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import survey from '../assets/json/questions.json'
 import ButtonComponent from '../components/Button.tsx'
+import '../assets/styles/pages/interview.scss'
 
 interface Theme {
     name: string
@@ -19,6 +20,8 @@ const Interview: React.FC = () => {
 
     //themes
     const theme: Theme = survey.themes[currentTheme]
+
+    console.log(theme)
 
     const themeName: string = theme.name
     const desiredTheme = survey.themes.find((theme) => theme.name === themeName)

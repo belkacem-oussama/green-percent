@@ -1,57 +1,73 @@
 {
     "themes": [
         {
-            "name": "domicile",
+            "name": "Stratégie et Engagement",
             "questions": [
                 {
                     "question": [
-                        "Je trie mes déchets :",
-                        "Je réduis la température de mon chauffage de quelques degrés :",
-                        "Je lave mon linge à 30 degrés :",
-                        "Je réutilise l'eau usagée :",
-                        "Je débranche les appareils que je n'utilise pas :"
+                        "Je met en place une strtégie RSE :",
+                        "Je vérifie si les objectifs RSE sont atteints :",
+                        "Je met en place des actions correctives :"
                     ]
                 }
             ]
         },
         {
-            "name": "travail",
+            "name": "Gestion des Ressources",
             "questions": [
                 {
                     "question": [
-                        "Je ne laisse pas mon appareil en veille :",
-                        "J'échange de manière électronique :",
-                        "J'imprime :",
-                        "J'apporte ma propre gourde :",
-                        "J'augmente le chauffage :"
+                        "J'impose le recyclage aux membres de l'équipe :",
+                        "Je surveille la consommation des énergies :",
+                        "Je met en place des actions correctives :"
                     ]
                 }
             ]
         },
         {
-            "name": "loisirs",
+            "name": "Approvisionnement Responsable",
             "questions": [
                 {
                     "question": [
-                        "Je choisis des activités respectueuses de l'environnement :",
-                        "Je privilégie les activités en plein air :",
-                        "Je participe à des événements éco-responsables :",
-                        "Je réduis la consommation de plastique :",
-                        "Je n'ai pas d'attention particulière à l'écologie dans mes loisirs :"
+                        "Je choisis mon fournisseur d'énergie en fonction de son impact environnemental :",
+                        "Je m'engage sur du long terme :",
+                        "J'utilise des produits nocifs pour l'environnement :"
                     ]
                 }
             ]
         },
         {
-            "name": "transport",
+            "name": "Mobilité et Transports",
             "questions": [
                 {
                     "question": [
-                        "Je me déplace en véhicule thermique :",
-                        "Je prends les transports en commun :",
-                        "Je fais du co-voit' :",
-                        "Je prends l'avion :",
-                        "Je roule en trotinette :"
+                        "J'accorde la possibilité de télétravailler :",
+                        "J'investis dans des véhicules respectueux de l'environnement :",
+                        "J'incite les membres de l'équipe à venir ensemble au travail :"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Mesure de l'Impact",
+            "questions": [
+                {
+                    "question": [
+                        "Je surveille mon empreinte carbone via des tableaux de bord :",
+                        "Je fixe des objectifs à atteindre :",
+                        "Je propose des moyens d'y arriver :"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Formation et Sensibilisation",
+            "questions": [
+                {
+                    "question": [
+                        "Je propose des formations aux pratiques responsables :",
+                        "J'encourage les membres des équipes à y participer :",
+                        "Je récompense leur participation :"
                     ]
                 }
             ]

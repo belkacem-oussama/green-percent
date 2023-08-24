@@ -1,5 +1,6 @@
 import Button from 'react-bootstrap/Button'
 import '../assets/styles/components/button.scss'
+import { Link } from 'react-router-dom'
 
 export default function ButtonComponent() {
     const handleClick = () => {
@@ -8,9 +9,11 @@ export default function ButtonComponent() {
 
     return (
         <div className="mb-2">
-            <Button className="button-home" size="lg" onClick={handleClick}>
-                Let's Go !
-            </Button>
+            <Link to="/interview">
+                <Button className="button-home" size="lg" onClick={handleClick}>
+                    Let's Go !
+                </Button>
+            </Link>
         </div>
     )
 }

@@ -1,0 +1,63 @@
+{
+    "themes": [
+        {
+            "name": "domicile",
+            "questions": [
+                {
+                    "question": [
+                        "Je trie mes déchets :",
+                        "Je réduis la température de mon chauffage de quelques degrés :",
+                        "Je lave mon linge à 30 degrés :",
+                        "Je réutilise l'eau usagée :",
+                        "Je débranche les appareils que je n'utilise pas :"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "travail",
+            "questions": [
+                {
+                    "question": [
+                        "Je ne laisse pas mon appareil en veille :",
+                        "J'échange de manière électronique :",
+                        "J'imprime :",
+                        "J'apporte ma propre gourde :",
+                        "J'augmente le chauffage :"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "loisirs",
+            "questions": [
+                {
+                    "question": [
+                        "Je choisis des activités respectueuses de l'environnement :",
+                        "Je privilégie les activités en plein air :",
+                        "Je participe à des événements éco-responsables :",
+                        "Je réduis la consommation de plastique :",
+                        "Je n'ai pas d'attention particulière à l'écologie dans mes loisirs :"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "transport",
+            "questions": [
+                {
+                    "question": [
+                        "Je me déplace en véhicule thermique :",
+                        "Je prends les transports en commun :",
+                        "Je fais du co-voit' :",
+                        "Je prends l'avion :",
+                        "Je roule en trotinette :"
+                    ]
+                }
+            ]
+        },
+        {
+            "options": ["Toujours", "Souvent", "Parfois", "Jamais"]
+        }
+    ]
+}

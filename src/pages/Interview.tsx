@@ -39,7 +39,6 @@ const Interview: React.FC = () => {
                 setCurrentTheme(currentTheme + 1)
                 setCurrentQuestion(0)
             } else {
-                console.log('Interview finished')
                 setInterviewFinished(!interviewFinished)
             }
         }

@@ -13,31 +13,41 @@ interface Question {
 }
 
 const Interview: React.FC = () => {
-    const [currentTheme, setCurrentTheme] = useState<number>(0)
+    const [currentTheme, setCurrentTheme] = useState<number>(3)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
 
     //questions
-    const theme = survey.themes[currentTheme]
-    let themeQuestion = theme.questions[0].question[currentQuestion]
+    const theme: Theme = survey.themes[currentTheme]
+    const themeName: string = theme.name
+
+    const desiredTheme = survey.themes.find((theme) => theme.name === themeName)
+    const questionsByTheme = desiredTheme?.questions[0].question || []
+
+    console.log(questionsByTheme)
+
+    const question: Question = theme.questions[currentQuestion]
+
+    const themeQuestion = Array.isArray(question.question)
+        ? question.question[currentQuestion]
+        : question.question
 
     //answers
     const options = survey.themes[6].options
 
     //functions
-    const handleInterview = () => {
-        console.log('ok')
-    }
+    const handleInterview = () => {}
 
     return (
         <div className="interview">
             <p>{themeQuestion}</p>
-            {options.map((option, index) => (
-                <ButtonComponent
-                    key={index}
-                    text={option}
-                    onClick={handleInterview}
-                />
-            ))}
+            {Array.isArray(question.question) &&
+                options.map((option, index) => (
+                    <ButtonComponent
+                        key={index}
+                        text={option}
+                        onClick={handleInterview}
+                    />
+                ))}
         </div>
     )
 }

@@ -32,7 +32,8 @@ const Interview: React.FC = () => {
     const options: string[] = survey.themes[6].options
 
     //functions
-    const handleInterview = () => {
+    const handleInterview = (e) => {
+        console.log(e.target.value)
         if (currentQuestion < questionsByTheme.length - 1) {
             setCurrentQuestion(currentQuestion + 1)
         } else {

@@ -16,7 +16,7 @@ const ButtonComponent: React.FC<ButtonComponentProps> = ({
     children,
 }) => {
     const buttonContent = (
-        <Button className={`button-home`} onClick={onClick}>
+        <Button className={`button-home`} onClick={onClick} value={text}>
             {text || children}
         </Button>
     )

@@ -20,11 +20,11 @@ const Interview: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<number>(0)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
     const [interviewFinished, setInterviewFinished] = useState<boolean>(false)
-    const [resultLoaded, setResultLoaded] = useState(false)
-    const [positiveResult, setPositiveResult] = useState(0)
-    const [negativeResult, setNegativeResult] = useState(0)
+    const [resultLoaded, setResultLoaded] = useState<boolean>(false)
+    const [positiveResult, setPositiveResult] = useState<number>(0)
+    const [negativeResult, setNegativeResult] = useState<number>(0)
 
-    const [optionCounts, setOptionCounts] = useState<Object>({
+    const [optionCounts, setOptionCounts] = useState<Record<string, number>>({
         Toujours: 0,
         Souvent: 0,
         Parfois: 0,
@@ -93,7 +93,7 @@ const Interview: React.FC = () => {
         }
     }
 
-    const handleInterview = (e) => {
+    const handleInterview = (e: React.MouseEvent<HTMLButtonElement>) => {
         const selectedOption: string = e.target.value
         setOptionCounts((prevCounts) => ({
             ...prevCounts,
@@ -120,8 +120,10 @@ const Interview: React.FC = () => {
         }
     }
 
-    let resultMessage = positiveResult ? "C'est plutôt pas mal !" : 'Pas ouf...'
-    let resultImage = positiveResult ? (
+    let resultMessage: string = positiveResult
+        ? "C'est plutôt pas mal !"
+        : 'Pas ouf...'
+    let resultImage: JSX.Element = positiveResult ? (
         <img src={earthHappy} className="logo" />
     ) : (
         <img src={earthSad} className="logo" />

@@ -38,6 +38,36 @@ const Interview: React.FC = () => {
     const options: string[] = survey.themes[6].options
 
     //functions
+    const handleStats = () => {
+        const topResponse = optionCounts.Toujours
+        const mediumResponse = optionCounts.Souvent
+        const notToBadResponse = optionCounts.Parfois
+        const badResponse = optionCounts.Jamais
+
+        const questionsSum =
+            topResponse + mediumResponse + notToBadResponse + badResponse
+
+        const calculatePercentage = (response) =>
+            (response / questionsSum) * 100
+
+        const arrayPartCalc = [
+            Math.round(calculatePercentage(topResponse)),
+            Math.round(calculatePercentage(mediumResponse)),
+            Math.round(calculatePercentage(notToBadResponse)),
+            Math.round(calculatePercentage(badResponse)),
+        ]
+
+        localStorage.setItem(
+            'goodResult',
+            parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1])
+        )
+        localStorage.setItem(
+            'badResult',
+            parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])
+        )
+        console.log(localStorage)
+    }
+
     const handleInterview = (e) => {
         let result: number = 0
         const selectedOption: string = e.target.value
@@ -53,40 +83,11 @@ const Interview: React.FC = () => {
                 setCurrentTheme(currentTheme + 1)
                 setCurrentQuestion(0)
             } else {
+                handleStats()
                 setInterviewFinished(!interviewFinished)
             }
         }
     }
-
-    let topResponse = optionCounts.Toujours
-    let mediumResponse = optionCounts.Souvent
-    let notToBadResponse = optionCounts.Parfois
-    let badResponse = optionCounts.Jamais
-
-    let questionsSum =
-        topResponse + mediumResponse + notToBadResponse + badResponse
-
-    let partCalcTop = (topResponse / questionsSum) * 100
-    let partCalcMedium = (mediumResponse / questionsSum) * 100
-    let partCalcNotToBad = (notToBadResponse / questionsSum) * 100
-    let partCalcBad = (badResponse / questionsSum) * 100
-
-    let arrayPartCalc = [
-        Math.round(partCalcTop),
-        Math.round(partCalcMedium),
-        Math.round(partCalcNotToBad),
-        Math.round(partCalcBad),
-    ]
-
-    localStorage.setItem(
-        'goodResult',
-        parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1])
-    )
-    localStorage.setItem(
-        'badResult',
-        parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])
-    )
-    console.log(localStorage)
 
     return interviewFinished ? (
         <div className="loader">

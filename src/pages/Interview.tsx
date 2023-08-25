@@ -66,11 +66,29 @@ const Interview: React.FC = () => {
             'badResult',
             parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])
         )
-        console.log(localStorage)
+    }
+
+    const handleResults = () => {
+        let GoodResultResultLocalStorage = parseFloat(
+            localStorage.getItem('goodResult')
+        )
+        let BadResultResultLocalStorage = parseFloat(
+            localStorage.getItem('badResult')
+        )
+
+        let maxValue = Math.max(
+            GoodResultResultLocalStorage,
+            BadResultResultLocalStorage
+        )
+
+        if (maxValue === GoodResultResultLocalStorage) {
+            console.log('+ ' + maxValue)
+        } else {
+            console.log('- ' + maxValue)
+        }
     }
 
     const handleInterview = (e) => {
-        let result: number = 0
         const selectedOption: string = e.target.value
         setOptionCounts((prevCounts) => ({
             ...prevCounts,
@@ -89,6 +107,7 @@ const Interview: React.FC = () => {
 
                 setTimeout(() => {
                     handleStats()
+                    handleResults()
                     setInterviewFinished(false)
                     setResultLoaded(true)
                 }, 5000)
@@ -96,7 +115,9 @@ const Interview: React.FC = () => {
         }
     }
     return resultLoaded ? (
-        'loaded'
+        <div className="results">
+            <p></p>
+        </div>
     ) : interviewFinished ? (
         <div className="loader">
             <img src={earthLoader} />

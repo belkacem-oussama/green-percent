@@ -17,8 +17,8 @@ interface Question {
 const Interview: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<number>(0)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
-    const [interviewFinished, setInterviewFinished] = useState(false)
-    const [optionCounts, setOptionCounts] = useState({
+    const [interviewFinished, setInterviewFinished] = useState<boolean>(false)
+    const [optionCounts, setOptionCounts] = useState<Object>({
         Toujours: 0,
         Souvent: 0,
         Parfois: 0,

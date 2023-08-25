@@ -84,7 +84,12 @@ const Interview: React.FC = () => {
                 setCurrentQuestion(0)
             } else {
                 handleStats()
-                setInterviewFinished(!interviewFinished)
+                setInterviewFinished(true)
+
+                setTimeout(() => {
+                    handleStats()
+                    setInterviewFinished(false)
+                }, 5000)
             }
         }
     }

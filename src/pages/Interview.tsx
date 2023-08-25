@@ -58,13 +58,44 @@ const Interview: React.FC = () => {
         }
     }
 
-    let questionsSum =
-        optionCounts.Toujours +
-        optionCounts.Souvent +
-        optionCounts.Parfois +
-        optionCounts.Jamais
+    let topResponse = optionCounts.Toujours
+    let mediumResponse = optionCounts.Souvent
+    let notToBadResponse = optionCounts.Parfois
+    let badResponse = optionCounts.Jamais
 
-    console.log(questionsSum)
+    let questionsSum =
+        topResponse + mediumResponse + notToBadResponse + badResponse
+
+    let partCalcTop = (topResponse / questionsSum) * 100
+    let partCalcMedium = (mediumResponse / questionsSum) * 100
+    let partCalcNotToBad = (notToBadResponse / questionsSum) * 100
+    let partCalcBad = (badResponse / questionsSum) * 100
+
+    let arrayPartCalc = [
+        Math.round(partCalcTop),
+        Math.round(partCalcMedium),
+        Math.round(partCalcNotToBad),
+        Math.round(partCalcBad),
+    ]
+
+    console.log(arrayPartCalc)
+
+    if (
+        parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1]) >
+        parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])
+    ) {
+        console.log(
+            'nice ! ' +
+                (parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1])) +
+                ' %'
+        )
+    } else {
+        console.log(
+            'pas nice ! ' +
+                (parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])) +
+                ' %'
+        )
+    }
 
     return interviewFinished ? (
         <div className="loader">

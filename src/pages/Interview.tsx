@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import survey from '../assets/json/questions.json'
 import ButtonComponent from '../components/Button.tsx'
 import earthLoader from '../assets/images/green-percent-earth.png'
+import earthHappy from '../assets/images/green-percent-earth-happy.png'
+import earthSad from '../assets/images/green-percent-earth-sad.png'
 import '../assets/styles/pages/interview.scss'
 
 interface Theme {
@@ -19,6 +21,9 @@ const Interview: React.FC = () => {
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
     const [interviewFinished, setInterviewFinished] = useState<boolean>(false)
     const [resultLoaded, setResultLoaded] = useState(false)
+    const [positiveResult, setPositiveResult] = useState(0)
+    const [negativeResult, setNegativeResult] = useState(0)
+
     const [optionCounts, setOptionCounts] = useState<Object>({
         Toujours: 0,
         Souvent: 0,
@@ -82,9 +87,9 @@ const Interview: React.FC = () => {
         )
 
         if (maxValue === GoodResultResultLocalStorage) {
-            console.log('+ ' + maxValue)
+            setPositiveResult(maxValue)
         } else {
-            console.log('- ' + maxValue)
+            setNegativeResult(maxValue)
         }
     }
 
@@ -114,9 +119,23 @@ const Interview: React.FC = () => {
             }
         }
     }
+
+    let resultMessage = positiveResult ? "C'est plutôt pas mal !" : 'Pas ouf...'
+    let resultImage = positiveResult ? (
+        <img src={earthHappy} className="logo" />
+    ) : (
+        <img src={earthSad} className="logo" />
+    )
+
     return resultLoaded ? (
-        <div className="results">
-            <p></p>
+        <div className={`results ${positiveResult ? 'positive' : 'negative'}`}>
+            <p className="result-image">{resultImage}</p>
+            <p className="result-value">
+                {positiveResult
+                    ? `+ ${positiveResult.toFixed(2)}%`
+                    : `- ${negativeResult.toFixed(2)}%`}
+            </p>
+            <p className="result-message">{resultMessage}</p>
         </div>
     ) : interviewFinished ? (
         <div className="loader">

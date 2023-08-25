@@ -1,27 +1,46 @@
-# React + TypeScript + Vite
+# Green Earth Assessment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+Green Earth Assessment is a web application designed to help users assess their ecological habits and behaviors. Users can answer a series of questions related to their environmental practices and receive a personalized assessment of their eco-friendliness.
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+-   Interactive interview process with a series of questions.
+-   Calculation of eco-friendliness based on user responses.
+-   Display of results with a graphical representation.
+-   Positive or negative feedback message based on the assessment.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
--   Configure the top-level `parserOptions` property like this:
+1. Clone the repository: `git clone` & `cd green-earth-assessment`
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+2. Install dependencies: `npm install`
 
--   Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
--   Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Run the application: `npm start`
+
+The application should now be running on `http://localhost:3000`.
+
+## Usage
+
+1. Access the application through your web browser.
+2. Follow the on-screen instructions to answer the assessment questions.
+3. After completing the assessment, the application will display your eco-friendliness score and feedback.
+
+## Technologies Used
+
+-   React: Front-end framework for building user interfaces.
+-   TypeScript: Programming language for static type-checking and modern JavaScript development.
+-   JSON: Data format for storing assessment questions and options.
+
+## Contributing
+
+Contributions are welcome! If you have suggestions, bug reports, or feature requests, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Feel free to customize this template according to your project's details. Include screenshots, deployment links, and any additional information that you find relevant. Good luck with your Green Earth Assessment project!

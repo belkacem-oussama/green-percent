@@ -18,6 +18,7 @@ const Interview: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<number>(0)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
     const [interviewFinished, setInterviewFinished] = useState<boolean>(false)
+    const [resultLoaded, setResultLoaded] = useState(false)
     const [optionCounts, setOptionCounts] = useState<Object>({
         Toujours: 0,
         Souvent: 0,
@@ -89,12 +90,14 @@ const Interview: React.FC = () => {
                 setTimeout(() => {
                     handleStats()
                     setInterviewFinished(false)
+                    setResultLoaded(true)
                 }, 5000)
             }
         }
     }
-
-    return interviewFinished ? (
+    return resultLoaded ? (
+        'loaded'
+    ) : interviewFinished ? (
         <div className="loader">
             <img src={earthLoader} />
             <p className="tagline">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import survey from '../assets/json/questions.json'
 import ButtonComponent from '../components/Button.tsx'
+import earthLoader from '../assets/images/green-percent-earth.png'
 import '../assets/styles/pages/interview.scss'
 
 interface Theme {
@@ -48,10 +49,15 @@ const Interview: React.FC = () => {
     }
 
     return interviewFinished ? (
-        "Merci d'avoir répondu"
+        <div className="loader">
+            <img src={earthLoader} />
+            <p className="tagline">
+                Vos résultats sont en cours de calculs ...
+            </p>
+        </div>
     ) : (
         <div className="interview">
-            <p>{currentQuestionText}</p>
+            <p className="tagline">{currentQuestionText}</p>
             {options.map((option, index) => (
                 <ButtonComponent
                     key={index}

@@ -78,24 +78,15 @@ const Interview: React.FC = () => {
         Math.round(partCalcBad),
     ]
 
-    console.log(arrayPartCalc)
-
-    if (
-        parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1]) >
+    localStorage.setItem(
+        'goodResult',
+        parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1])
+    )
+    localStorage.setItem(
+        'badResult',
         parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])
-    ) {
-        console.log(
-            'nice ! ' +
-                (parseFloat(arrayPartCalc[0]) + parseFloat(arrayPartCalc[1])) +
-                ' %'
-        )
-    } else {
-        console.log(
-            'pas nice ! ' +
-                (parseFloat(arrayPartCalc[2]) + parseFloat(arrayPartCalc[3])) +
-                ' %'
-        )
-    }
+    )
+    console.log(localStorage)
 
     return interviewFinished ? (
         <div className="loader">

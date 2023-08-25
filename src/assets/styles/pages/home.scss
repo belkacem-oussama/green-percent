@@ -1,0 +1,47 @@
+@import '../_vars.scss';
+
+.home {
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    color: black;
+}
+
+.green-dot {
+    font-size: 2.5rem;
+    color: $primary-color;
+}
+
+.green-text {
+    color: $primary-hover-color;
+    font-size: 1.5rem;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 30px;
+}

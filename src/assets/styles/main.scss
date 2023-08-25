@@ -1,0 +1,18 @@
+@import './_vars.scss';
+
+* {
+    font-family: 'Bree Serif', system-ui, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: $background-color;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+}

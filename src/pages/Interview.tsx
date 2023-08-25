@@ -18,6 +18,12 @@ const Interview: React.FC = () => {
     const [currentTheme, setCurrentTheme] = useState<number>(0)
     const [currentQuestion, setCurrentQuestion] = useState<number>(0)
     const [interviewFinished, setInterviewFinished] = useState(false)
+    const [optionCounts, setOptionCounts] = useState({
+        Toujours: 0,
+        Souvent: 0,
+        Parfois: 0,
+        Jamais: 0,
+    })
 
     //themes
     const theme: Theme = survey.themes[currentTheme]
@@ -33,7 +39,12 @@ const Interview: React.FC = () => {
 
     //functions
     const handleInterview = (e) => {
-        console.log(e.target.value)
+        const selectedOption = e.target.value
+        setOptionCounts((prevCounts) => ({
+            ...prevCounts,
+            [selectedOption]: prevCounts[selectedOption] + 1,
+        }))
+
         if (currentQuestion < questionsByTheme.length - 1) {
             setCurrentQuestion(currentQuestion + 1)
         } else {
@@ -45,6 +56,7 @@ const Interview: React.FC = () => {
             }
         }
     }
+    console.log(optionCounts)
 
     return interviewFinished ? (
         <div className="loader">

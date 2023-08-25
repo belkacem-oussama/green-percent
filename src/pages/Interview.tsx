@@ -44,6 +44,8 @@ const Interview: React.FC = () => {
     const options: string[] = survey.themes[6].options
 
     //functions
+
+    //to calculate
     const handleStats = () => {
         const topResponse = optionCounts.Toujours
         const mediumResponse = optionCounts.Souvent
@@ -73,6 +75,7 @@ const Interview: React.FC = () => {
         )
     }
 
+    //to play with results
     const handleResults = () => {
         let GoodResultResultLocalStorage = parseFloat(
             localStorage.getItem('goodResult')
@@ -93,6 +96,7 @@ const Interview: React.FC = () => {
         }
     }
 
+    //to manage interview
     const handleInterview = (e: React.MouseEvent<HTMLButtonElement>) => {
         const selectedOption: string = e.target.value
         setOptionCounts((prevCounts) => ({
@@ -123,6 +127,7 @@ const Interview: React.FC = () => {
     let resultMessage: string = positiveResult
         ? "C'est plutôt pas mal !"
         : 'Pas ouf...'
+
     let resultImage: JSX.Element = positiveResult ? (
         <img src={earthHappy} className="logo" />
     ) : (

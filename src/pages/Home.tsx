@@ -2,6 +2,7 @@ import GPLogo from '../assets/images/green-percent-logo.png'
 import GPGirl from '../assets/images/green-logo-girl.png'
 import ButtonComponent from '../components/Button.tsx'
 import '../assets/styles/pages/home.scss'
+import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
@@ -24,7 +25,9 @@ export default function Home() {
                 sang vert que tu as en toi, prêt ?
             </p>
             <img className="logo" src={GPGirl} alt="Green-Percent Logo" />
-            <ButtonComponent />
+            <Link to="/interview">
+                <ButtonComponent text="Let's Go !" />
+            </Link>
         </div>
     )
 }

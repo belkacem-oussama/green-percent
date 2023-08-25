@@ -21,9 +21,6 @@ const Interview: React.FC = () => {
 
     //themes
     const theme: Theme = survey.themes[currentTheme]
-
-    console.log(theme)
-
     const themeName: string = theme.name
     const desiredTheme = survey.themes.find((theme) => theme.name === themeName)
 

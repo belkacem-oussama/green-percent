@@ -39,7 +39,8 @@ const Interview: React.FC = () => {
 
     //functions
     const handleInterview = (e) => {
-        const selectedOption = e.target.value
+        let result: number = 0
+        const selectedOption: string = e.target.value
         setOptionCounts((prevCounts) => ({
             ...prevCounts,
             [selectedOption]: prevCounts[selectedOption] + 1,
@@ -56,7 +57,14 @@ const Interview: React.FC = () => {
             }
         }
     }
-    console.log(optionCounts)
+
+    let questionsSum =
+        optionCounts.Toujours +
+        optionCounts.Souvent +
+        optionCounts.Parfois +
+        optionCounts.Jamais
+
+    console.log(questionsSum)
 
     return interviewFinished ? (
         <div className="loader">

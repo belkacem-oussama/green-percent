@@ -3,10 +3,10 @@
 Petit projet réalisé la veille en prévoyance d'un entretien.
 
 ## Installation
-
-Lancez les commandes suivantes à la racine du projet :
-
+Dans un répertoire de votre choix lancez la commande :
 -   `git clone`
+
+Lancez ensuite les commandes suivantes à la racine du projet :
 -   `npm install`
 -   `npm run dev`
 

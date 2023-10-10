@@ -4,7 +4,7 @@ Petit projet réalisé la veille en prévoyance d'un entretien.
 
 ## Installation
 Dans un répertoire de votre choix lancez la commande :
--   `git clone`
+-   `git clone git@github.com:belkacem-oussama/green-percent.git`
 
 Lancez ensuite les commandes suivantes à la racine du projet :
 -   `npm install`

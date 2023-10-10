@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
-import survey from '../assets/json/questions.json'
+import { Link } from 'react-router-dom'
+
 import ButtonComponent from '../components/Button.tsx'
+
+import '../assets/styles/pages/interview.scss'
+
+import survey from '../assets/json/questions.json'
+
 import earthLoader from '../assets/images/green-percent-earth.png'
 import earthHappy from '../assets/images/green-percent-earth-happy.png'
 import earthSad from '../assets/images/green-percent-earth-sad.png'
-import '../assets/styles/pages/interview.scss'
 
 interface Theme {
     name: string
@@ -138,6 +143,9 @@ const Interview: React.FC = () => {
                     : `- ${negativeResult.toFixed(2)}%`}
             </p>
             <p className="result-message">{resultMessage}</p>
+            <Link to="/">
+                <ButtonComponent text="Accueil" />
+            </Link>
         </div>
     ) : interviewFinished ? (
         <div className="loader">

@@ -1,7 +1,10 @@
 import React, { ReactNode } from 'react'
-import PropTypes from 'prop-types'
+
 import Button from 'react-bootstrap/Button'
+
 import '../assets/styles/components/button.scss'
+
+import PropTypes from 'prop-types'
 
 interface ButtonComponentProps {
     text: string

@@ -1,8 +1,11 @@
+import { Link } from 'react-router-dom'
+
+import ButtonComponent from '../components/Button.tsx'
+
+import '../assets/styles/pages/home.scss'
+
 import GPLogo from '../assets/images/green-percent-logo.png'
 import GPGirl from '../assets/images/green-logo-girl.png'
-import ButtonComponent from '../components/Button.tsx'
-import '../assets/styles/pages/home.scss'
-import { Link } from 'react-router-dom'
 
 export default function Home() {
     return (
